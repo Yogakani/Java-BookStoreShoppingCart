@@ -88,8 +88,8 @@ public class CartController extends HttpServlet {
   }
   
   private void deleteFromCart(HttpServletRequest request, HttpServletResponse response) {
+	  int index = Integer.parseInt(request.getParameter("index"));
 	  HttpSession session = request.getSession();
-	  int index = (int) session.getAttribute("index");
 	  ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("cart");
 	  shoppingCart.deleteCartItem(index);
   }
